@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>20/10 - Dành cho em yêu 💖</title>
+    <meta name="description" content="Món quà đặc biệt dành tặng em yêu nhân ngày Phụ nữ Việt Nam 20/10. Chúc em luôn xinh đẹp, hạnh phúc và thành công!">
+    <meta name="keywords" content="20/10, ngày phụ nữ việt nam, quà tặng, tình yêu, chúc mừng 20/10">
+    <meta name="author" content="Người yêu của em">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="💖 Chúc Mừng 20/10 - Dành Tặng Em Yêu 💖">
+    <meta property="og:description" content="Món quà đặc biệt và lời chúc ngọt ngào dành cho em yêu của anh. Click để xem nhé! 🌹">
+    <meta property="og:image" content="images/1c13557b-01ca-4d6b-b515-94399e3560b9.jfif">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Love Gift 20/10">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💖 Chúc Mừng 20/10 - Dành Tặng Em Yêu 💖">
+    <meta name="twitter:description" content="Món quà đặc biệt và lời chúc ngọt ngào dành cho em yêu của anh. Click để xem nhé! 🌹">
+    <meta name="twitter:image" content="images/1c13557b-01ca-4d6b-b515-94399e3560b9.jfif">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Nút bật/tắt nhạc -->
+    <button id="musicToggle" class="music-btn">🎵</button>
+
+    <!-- Audio nhạc nền -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Canvas cho hiệu ứng hoa rơi -->
+    <canvas id="flowerCanvas"></canvas>
+
+    <!-- Welcome Splash Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="welcome-title">
+                <span class="welcome-heart">💖</span>
+                Chúc Mừng 20/10
+                <span class="welcome-heart">💖</span>
+            </h1>
+            <p class="welcome-subtitle">Dành tặng em yêu của anh</p>
+            <button id="enterBtn" class="enter-btn">
+                Mở Quà Nhé Em 🎁
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần chính -->
+    <div class="container" id="mainContent" style="display: none;">
+        <!-- Tiêu đề chính -->
+        <div class="header fade-in">
+            <h1 class="main-title">
+                <span class="emoji-heart">💕</span>
+                Chúc mừng 20/10
+                <span class="emoji-heart">💕</span>
+            </h1>
+            <p class="subtitle">Dành tặng người phụ nữ tuyệt vời nhất 🌹</p>
+        </div>
+
+        <!-- Phần lời nhắn chính -->
+        <div class="message-box slide-up">
+            <div class="message-content">
+                <h2>Gửi em yêu của anh 💖</h2>
+                <p class="message-text">
+                    Nhân ngày Phụ nữ Việt Nam 20/10, anh muốn gửi đến em những lời chúc tốt đẹp nhất.
+                    Em là ánh sáng trong cuộc đời anh, là nguồn động lực để anh cố gắng mỗi ngày.
+                </p>
+                <p class="message-text">
+                    Cảm ơn em đã luôn ở bên anh, chia sẻ những niềm vui, nỗi buồn và tất cả những khoảnh khắc
+                    trong cuộc sống. Em xứng đáng nhận được tất cả những điều tốt đẹp nhất!
+                </p>
+                <p class="message-text highlight">
+                    ✨ Chúc em luôn xinh đẹp, hạnh phúc và thành công! ✨
+                </p>
+                <p class="signature">Yêu em nhiều lắm! 💗</p>
+            </div>
+        </div>
+
+        <!-- Phần hộp quà bất ngờ -->
+        <div class="gift-section">
+            <h2 class="section-title">Nhấn vào hộp quà để nhận bất ngờ! 🎁</h2>
+            <div class="gift-box" id="giftBox">
+                <div class="gift-icon">🎁</div>
+            </div>
+            <div id="surpriseMessage" class="surprise-message hidden">
+                <div class="surprise-content">
+                    <h3>🌟 Những điều anh yêu ở em 🌟</h3>
+                    <ul class="love-list">
+                        <li>💕 Nụ cười rạng rỡ của em</li>
+                        <li>🌸 Sự dịu dàng, quan tâm của em</li>
+                        <li>✨ Cách em làm anh cảm thấy đặc biệt</li>
+                        <li>💖 Tất cả những khoảnh khắc bên em</li>
+                        <li>🌹 Và còn vô vàn điều khác nữa...</li>
+                    </ul>
+                    <p class="extra-message">
+                        Anh hứa sẽ luôn ở bên, yêu thương và chăm sóc em! 💑
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần đếm ngược hoặc đếm tiến -->
+        <div class="counter-section">
+            <h2 class="section-title">Thời gian bên nhau 💝</h2>
+            <div class="counter-box">
+                <div id="counter" class="counter-display">
+                    <div class="time-unit">
+                        <span id="days" class="time-number">0</span>
+                        <span class="time-label">Ngày</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours" class="time-number">0</span>
+                        <span class="time-label">Giờ</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes" class="time-number">0</span>
+                        <span class="time-label">Phút</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds" class="time-number">0</span>
+                        <span class="time-label">Giây</span>
+                    </div>
+                </div>
+                <p class="counter-note">Kể từ ngày anh gặp em 💕</p>
+                <p class="counter-instruction">(Chỉnh ngày bắt đầu trong file script.js)</p>
+            </div>
+        </div>
+
+        <!-- Phần gallery ảnh -->
+        <div class="gallery-section">
+            <h2 class="section-title">Kỷ niệm của chúng mình 📸</h2>
+            <div class="gallery-grid">
+                <div class="photo-item">
+                    <img src="images/1c13557b-01ca-4d6b-b515-94399e3560b9.jfif" alt="Kỷ niệm 1">
+                </div>
+                <div class="photo-item">
+                    <img src="images/ad5603de-16e2-4249-a3ab-a1bff194598b.jfif" alt="Kỷ niệm 2">
+                </div>
+                <div class="photo-item">
+                    <img src="images/c6c33487-1079-448c-a1a6-ad5eb1e085a8.jfif" alt="Kỷ niệm 3">
+                </div>
+                <div class="photo-item">
+                    <img src="images/f2b6d81b-2635-480e-a9fe-0c152c8db658.jfif" alt="Kỷ niệm 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with 💗 for my special one</p>
+            <p class="date">20/10/2025</p>
+        </div>
+    </div>
+
+    <!-- Hearts animation -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
